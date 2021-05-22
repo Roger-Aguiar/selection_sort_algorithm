@@ -18,7 +18,7 @@ public class SelectionSort implements ISelectionSort
 
         for(int i = 0; i < sortedArray.length - 1; i++)
         {
-            int indexMinorElement = GetMinorNumber(i);
+            int indexMinorElement = GetIndexMinorNumber(i);
 
             if(sortedArray[indexMinorElement] < sortedArray[i])
             {
@@ -31,7 +31,7 @@ public class SelectionSort implements ISelectionSort
         return sortedArray;
     }
 
-    private int GetMinorNumber(int index)
+    private int GetIndexMinorNumber(int index)
     {
         int minor = sortedArray[index];
         int indexMinor = 0;
