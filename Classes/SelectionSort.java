@@ -12,21 +12,21 @@ public class SelectionSort implements ISelectionSort
     }
 
     @Override
-    public int [] SortArray() 
-    {     
-        System.out.println(DisplayArray());
-
+    public int [] SortArrayAscending() 
+    {          
         for(int i = 0; i < sortedArray.length - 1; i++)
         {
             int indexMinorElement = GetIndexMinorNumber(i);
 
-            if(sortedArray[indexMinorElement] < sortedArray[i])
+            if(indexMinorElement != 0)
             {
-                int aux = sortedArray[i];
-                sortedArray[i] = sortedArray[indexMinorElement];
-                sortedArray[indexMinorElement] = aux;
-            }
-            System.out.println(DisplayArray());             
+                if(sortedArray[indexMinorElement] < sortedArray[i])
+                {
+                    int aux = sortedArray[i];
+                    sortedArray[i] = sortedArray[indexMinorElement];
+                    sortedArray[indexMinorElement] = aux;
+                }
+            }                              
         }      
         return sortedArray;
     }
@@ -44,24 +44,7 @@ public class SelectionSort implements ISelectionSort
                 indexMinor = i;
             }
         }
-
-        return indexMinor;
-    }
-
-    @Override
-    public String DisplayArray() 
-    {
-        String arrayOutput = "";
         
-        for (int element : sortedArray) 
-        {
-            arrayOutput += element + "  ";            
-        }
-
-        arrayOutput += "\n";
-
-        return arrayOutput;
-    }
-    
-    
+        return indexMinor;
+    }   
 }
